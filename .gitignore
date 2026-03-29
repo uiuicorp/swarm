@@ -97,9 +97,6 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
-<<<<<<< HEAD
 
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
-=======
->>>>>>> f5cf90975a0cc26b419f54459acfc387f2374a00
