@@ -1,15 +1,17 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float velocity = 5f;
     private Vector2 direction;
+    PlayerInput playerInput;
 
     void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
     }
 
