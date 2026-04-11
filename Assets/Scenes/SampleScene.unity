@@ -2561,7 +2561,7 @@ GameObject:
   - component: {fileID: 1197049522}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2857,6 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnBtnController
   somClick: {fileID: 8300000, guid: 236b02617af5d424c862dfbc198c9674, type: 3}
+  enemy: {fileID: 6627003607238365481, guid: ad7742ee79145e646ab8a101e7e6956f, type: 3}
 --- !u!95 &1209397600
 Animator:
   serializedVersion: 7
@@ -2925,7 +2926,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1209397599}
         m_TargetAssemblyTypeName: SpawnBtnController, Assembly-CSharp
-        m_MethodName: OnPointerDown
+        m_MethodName: SpawnEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

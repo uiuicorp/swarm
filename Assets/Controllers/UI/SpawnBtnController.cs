@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class SpawnBtnController : MonoBehaviour
 {
-    //private Button button;
     [SerializeField] private AudioClip somClick;
+    [SerializeField] private GameObject enemy;
     private AudioSource audioSource;
 
     void Start()
@@ -23,9 +22,21 @@ public class SpawnBtnController : MonoBehaviour
         //Lembrete para ajeitar no futuro
     }
 
-    public void OnPointerDown()
+    public void SpawnEnemy()
+    {
+        ButtonSound();
+
+        Instantiate(enemy, SpawnPosition(), Quaternion.identity); 
+    }
+
+    private void ButtonSound()
     {
         if (somClick) audioSource.PlayOneShot(somClick);
     }
 
+    private Vector3 SpawnPosition()
+    {
+        //Adicionar algoritmo de posicionamento
+        return new Vector3(-3, 0, 0);
+    }
 }
