@@ -2559,6 +2559,9 @@ GameObject:
   - component: {fileID: 1197049517}
   - component: {fileID: 1197049521}
   - component: {fileID: 1197049522}
+  - component: {fileID: 1197049524}
+  - component: {fileID: 1197049523}
+  - component: {fileID: 1197049525}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2801,7 +2804,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71e8fc9cd8da8642ae440dbb5a73da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  velocity: 5
+  _speed: 5
+  _damageReceiver: {fileID: 1197049524}
+--- !u!58 &1197049523
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197049516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.007263541, y: -0.007263541}
+  m_Radius: 0.7
+--- !u!114 &1197049524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197049516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97160dd875004ec4fa708d4d72b98eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Damage.Components.DamageReceiver
+  _maxHealth: 100
+  _currentHealth: 100
+  _baseDefense: 0
+  _fireResistance: 0
+  _iceResistance: 0
+  _lightningResistance: 0
+  _holyResistance: 0
+  _darkResistance: 0
+  _invincibilityDuration: 0.5
+  _deathEffect: {fileID: 0}
+  _destroyOnDeath: 0
+--- !u!114 &1197049525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197049516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7ac0845a5e8984dab46c8cae34aa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageDebugger
 --- !u!1 &1209397597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,7 +2932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnBtnController
   somClick: {fileID: 8300000, guid: 236b02617af5d424c862dfbc198c9674, type: 3}
-  enemy: {fileID: 6627003607238365481, guid: ad7742ee79145e646ab8a101e7e6956f, type: 3}
+  enemy: {fileID: 1773014956167688097, guid: ecaba006395e5774a9a2f613a1785da1, type: 3}
 --- !u!95 &1209397600
 Animator:
   serializedVersion: 7

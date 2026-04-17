@@ -1,22 +1,39 @@
+using Core.Damage.Components;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.3f;
-    private GameObject player;
-    
+    [Header("Movement")]
+    [SerializeField] private float _speed = 1f;
+    private Transform _playerPosition;
+
+    [Header("Components")]
+    [SerializeField] private DamageReceiver _damageReceiver;
+    [SerializeField] private DamageDealer _damageDealer;
+
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            _playerPosition = player.transform;
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
-        if (player != null)
+        if (_playerPosition != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _playerPosition.position, _speed * Time.deltaTime);
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _damageDealer?.TryDealDamage(collision.gameObject);
+        }
     }
 }
