@@ -2932,7 +2932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnBtnController
   somClick: {fileID: 8300000, guid: 236b02617af5d424c862dfbc198c9674, type: 3}
-  enemy: {fileID: 1773014956167688097, guid: ecaba006395e5774a9a2f613a1785da1, type: 3}
+  enemy: {fileID: 1773014956167688097, guid: 9c59f3fed56868b48a26155555768052, type: 3}
 --- !u!95 &1209397600
 Animator:
   serializedVersion: 7

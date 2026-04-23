@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5262151594927846169}
   - component: {fileID: 4096370227778725491}
   - component: {fileID: 4148929545527934048}
+  - component: {fileID: 2104030433087457347}
   - component: {fileID: 9124494697183414540}
   - component: {fileID: 8796602752964419334}
   m_Layer: 0
-  m_Name: Enemy01
+  m_Name: Enemy02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd35dd27564fbf9489bbe3c33f8e0c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  _speed: 1
+  _speed: 0.5
   _damageReceiver: {fileID: 4148929545527934048}
   _damageDealer: {fileID: 4096370227778725491}
 --- !u!114 &4096370227778725491
@@ -151,6 +152,21 @@ MonoBehaviour:
   _invincibilityDuration: 0
   _deathEffect: {fileID: 0}
   _destroyOnDeath: 1
+--- !u!114 &2104030433087457347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773014956167688097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d51e508fe64c54292fbc4ebe30946d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RangedAttacker
+  projectilePrefab: {fileID: 8654260253256523693, guid: 1ac64e9c08e9e0d43ab09fd88be40154, type: 3}
+  attackRange: 5
+  attackCooldown: 3
 --- !u!50 &9124494697183414540
 Rigidbody2D:
   serializedVersion: 5

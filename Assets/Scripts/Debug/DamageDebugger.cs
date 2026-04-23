@@ -10,7 +10,7 @@ public class DamageDebugger : MonoBehaviour
         if (receiver != null)
         {
             receiver.OnDamageTaken += (damage) =>
-                Debug.Log($"Player tomou {damage.Value} de dano do tipo {damage.Type}!");
+                Debug.Log($"{gameObject.tag} tomou {damage.Value} de dano do tipo {damage.Type}!");
 
             receiver.OnDeath += () =>
                 Debug.Log("Morri!");
